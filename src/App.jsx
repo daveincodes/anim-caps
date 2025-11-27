@@ -192,9 +192,9 @@ export function Header() {
                 aria-haspopup="true"
                 role="menuitem"
               >
-                Productos<span class="caret"></span>
+                Productos<span className="caret"></span>
               </button>
-              <div class="dropdown" role="menu" aria-label="Submenú Productos">
+              <div className="dropdown" role="menu" aria-label="Submenú Productos">
                 <a href="/productos" role="menuitem" disabled>Productos</a>
                 <a href="/nuestras-capsulas" role="menuitem">Cápsulas</a>
                 <a href="/otros" role="menuitem">Otros</a>
@@ -202,12 +202,12 @@ export function Header() {
             </li>
 
             <li role="none">
-              <a class="link" href="/servicio" role="menuitem"
+              <a className="link" href="/servicio" role="menuitem"
                 >Servicio y Mantenimiento</a
               >
             </li>
             <li role="none">
-              <a class="link" href="/contacto" role="menuitem">Contacto</a>
+              <a className="link" href="/contacto" role="menuitem">Contacto</a>
             </li>
           </ul>
         </div>

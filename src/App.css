@@ -185,7 +185,7 @@ p {
 
 .logo-nav {
   width: 70px;
-  height: 70px;
+  height: 100%;
   margin-right: 8px;
   flex-shrink: 0
 }
