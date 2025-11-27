@@ -16,7 +16,7 @@
       --glass-bd-2: rgba(255,255,255,.35);
       --glass-hi: rgba(255,255,255,.25);
       --chip-radius:24px;
-      --hero-equipos-img:url("https://images.unsplash.com/photo-1581090464777-f3220bbe1b8c?w=1600");
+      --hero-equipos-img:url("https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/6928c747164e9ac3fafc23bd_equipos-anim.jpg?=1600");
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-left: env(safe-area-inset-left, 0px);
       --safe-right: env(safe-area-inset-right, 0px);
