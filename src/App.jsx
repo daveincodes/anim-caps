@@ -468,7 +468,7 @@ const App = () => {
                 <RefrigeradoresFarmaceuticos />
               </div>
               
-              <div style={{ position: 'absolute', top: '566.8vh'}}>
+              <div style={{ position: 'absolute', top: '566.6vh'}}>
                  <Footer />
               </div>
              
