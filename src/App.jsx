@@ -168,24 +168,47 @@ export function Header() {
           <button className="toggle" id="navToggle">☰</button>
 
           <ul className="nav" id="siteNav" role="menubar">
-            <li className="logo-nav"><img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" /></li>
-            <li><a className="link" href="/">Inicio</a></li>
-            <li><a className="link" href="/nosotros">Nosotros</a></li>
-            <li><a className="link" href="/soluciones">Soluciones</a></li>
-            <li><a className="link" href="/proyectos">Proyectos</a></li>
+            <li className="logo-nav">
+              <img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" />
+              </li>
+             <li role="none">
+              <a className="link" href="/" role="menuitem">Inicio</a>
+            </li>
+            <li role="none">
+              <a className="link" href="/nosotros" role="menuitem">Nosotros</a>
+            </li>
+            <li role="none">
+              <a class="link" href="/soluciones" role="menuitem">Soluciones</a>
+            </li>
+            <li role="none">
+              <a className="link" href="/proyectos" role="menuitem">Proyectos</a>
+            </li>
 
-            <li className="has-dd">
-              <button className="link dd-btn">Productos<span className="caret"></span></button>
-              <div className="dropdown">
-                <a href="/productos/sistemas">Sistemas neumáticos</a>
-                <a href="/productos/capsulas">Cápsulas</a>
-                <a href="/productos/tuberia">Tubería y accesorios</a>
-                <a href="/productos/software">Software</a>
+            <li className="has-dd" role="none">
+              <button
+                className ="link dd-btn"
+                type="button"
+                aria-expanded="false"
+                aria-haspopup="true"
+                role="menuitem"
+              >
+                Productos<span class="caret"></span>
+              </button>
+              <div class="dropdown" role="menu" aria-label="Submenú Productos">
+                <a href="/productos" role="menuitem" disabled>Productos</a>
+                <a href="/nuestras-capsulas" role="menuitem">Cápsulas</a>
+                <a href="/otros" role="menuitem">Otros</a>
               </div>
             </li>
 
-            <li><a className="link" href="#">Servicio y mantenimiento</a></li>
-            <li><a className="link" href="#">Contacto</a></li>
+            <li role="none">
+              <a class="link" href="/servicio" role="menuitem"
+                >Servicio y Mantenimiento</a
+              >
+            </li>
+            <li role="none">
+              <a class="link" href="/contacto" role="menuitem">Contacto</a>
+            </li>
           </ul>
         </div>
       </div>
