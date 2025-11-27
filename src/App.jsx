@@ -4,253 +4,147 @@ import './App.css';
 import { Environment, ScrollControls, Scroll, Html, useScroll } from '@react-three/drei';
 import Model from './DIEGO CAPSULA';
 
-function HeroSection() {
+export function HeroEquipos() {
   return (
-    <section className="landing-section">
-      <div className="left-section">
-        <div className="image-placeholder">
-
-        </div>
-        <p className="welcome-text">
-          Bienvenido a SNE, donde la tecnología y la confianza se unen para transformar las operaciones en cada sector industrial y comercial.
-        </p>
-      </div>
-
-      <div className="right-section">
-      <div className="logo-container">
-        <img src="/sne_logo.png" alt="SNE Logo" className="sne-logo" width={'300px'}/>
-      </div>
-
-
-        <div className="headline-container">
-          <h1 className="headline">
-            35 AÑOS
-            <br />
-            LIDERANDO
-            <br />
-            SEGURIDAD Y
-            <br />
-            EFICIENCIA EN
-            <br />
-            EL MANEJO DE
-            <br />
-            VALORES.
-          </h1>
-        </div>
-      </div>
-
-      <div className="background-circles">
-       
-      </div>
-    </section>
-  )
-}
-
-function SolutionsSection() {
-  return (
-    <section className="landing-section solutions-section">
-      <div className="solutions-left">
-        <h2 className="solutions-headline">
-          SOLUCIONES PARA EL 
-          <br />
-          SECTOR COMERCIAL
-        </h2>
-
-        <p className="solutions-description">
-          Optimizamos procesos para garantizar la seguridad en cada transacción, desde pequeños negocios hasta grandes cadenas.
-        </p>
-        <hr style={{ border: 'none', borderTop: '1px solid white', margin: '10px 0' }} />
-        <div className="benefits-container">
-          <h3 className="benefits-title">BENEFICIOS</h3>
-          <ul className="benefits-list">
-            <li>Transporte seguro de efectivo</li>
-            <li>Reducción de riesgos y costos</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="solutions-right">
-        {/* <div className="solutions-image-placeholder">
-        <Canvas  style={{ width: '100%', height: '100%' }}>
-        <Model />
-        <Environment preset="warehouse" />
-      </Canvas>
-        </div> */}
-      </div>
-
-      <div className="background-circles left">
-     
-      </div>
-    </section>
-  )
-}
-
-function AutomationSection() {
-  return (
-    <section className="landing-section automation-section">
-      <h2 className="automation-headline">AUTOMATIZACIÓN EN INDUSTRIAS</h2>
-
-      <div className="automation-content">
-        <div className="automation-left">
-          <p className="automation-description">
-            En la industria, cada segundo cuenta. Nuestros sistemas garantizan un flujo continuo y seguro de materiales críticos.
-          </p>
-        </div>
-
-        <div className="automation-center">
-        </div>
-       
-        <div className="automation-right">
-        
-          <div className="automation-benefits">
-         
-            <h3 className="benefits-title">BENEFICIOS</h3>
-            <ul className="benefits-list">
-              <li>Mejor experiencia para el cliente</li>
-              <li>Procesos rápidos y seguros</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="background-circles dual">
-        
-      </div>
-    </section>
-  )
-}
-
-function BankingSection() {
-  return (
-    <section className="landing-section banking-section">
-      <div className="banking-left">
-        {/* <div className="banking-image-placeholder">
-        <Canvas  style={{ width: '100%', height: '100%' }}>
-          <Model />
-          <Environment preset="warehouse" />
-        </Canvas>
-        </div> */}
-      </div>
-      
-      <div className="banking-right">
-        <h2 className="banking-headline">
-          Eficiencia en<br />
-          el sector<br />
-          bancario
-        </h2>
-        
-        <p className="banking-description">
-          Desde sucursales hasta módulos de autoservicio, estamos reinventando la forma en que los bancos operan y atienden a sus clientes.
-        </p>
-        <hr style={{ border: 'none', borderTop: '1px solid white', margin: '10px 0' }} />
-        <div className="banking-benefits">
-          <h3 className="benefits-title">BENEFICIOS</h3>
-          <ul className="benefits-list">
-            <li>Mejor experiencia para el cliente</li>
-            <li>Procesos rápidos y seguros</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div className="background-circles right">
+    <section className="hero-equipos">
+      <div className="container hero-equipos__inner">
+        <h1 className="hero-equipos__title">
+          Nuestros
+          <span>Equipos</span>
+        </h1>
       </div>
     </section>
   );
 }
 
-function StatsSection() {
+export function TabsEquipos() {
   return (
-    <section className="landing-section stats-section">
-      <div className="stats-container">
-        <h2 className="stats-headline">
-          15,000 SISTEMAS INSTALADOS
-          <br />
-          EN TODO EL MUNDO
-        </h2>
-{/* 
-        <div className="map-placeholder"><Canvas  style={{ width: '100%', height: '100%' }}>
-          <Model />
-          <Environment preset="warehouse" />
-        </Canvas></div> */}
-
-        <p className="stats-description">
-          Con más de 15,000 sistemas instalados, somos líderes globales en transporte neumático seguro y eficiente.
-        </p>
-      </div>
-
-      <div className="background-circles right">
-      </div>
-    </section>
-  )
+    <div className="equipos-tabs">
+      <span className="equipos-tab">Unidireccionales</span>
+      <span className="equipos-tab">Bidireccionales</span>
+      <span className="equipos-tab">Multipunto</span>
+    </div>
+  );
 }
 
-function ContactSection() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-  };
 
+export function EquipoSinen() {
   return (
-    <section className="landing-section contact-section">
-      <div className="contact-left">
-        <h2 className="contact-headline">
-          Descubre cómo<br />
-          podemos<br />
-          transformar tu<br />
-          negocio
-        </h2>
-        
-        <p className="contact-description">
-          Da el siguiente paso hacia la seguridad y eficiencia. Hablemos.
+    <div className="equipos-tipo-block">
+      <h3 className="equipos-tipo-title">Sinen:</h3>
+      <p className="equipos-tipo-text">Bajo costo, sin mecanismos automáticos.</p>
+      <em className="equipos-tipo-meta">
+        Aplicaciones: gasolineras, oficinas pequeñas, comercios.
+      </em>
+    </div>
+  );
+}
+
+export function EquipoDesliz() {
+  return (
+    <div className="equipos-tipo-block">
+      <h3 className="equipos-tipo-title">Deslizable:</h3>
+      <p className="equipos-tipo-text">Puerta corrediza para mayor control.</p>
+      <em className="equipos-tipo-meta">
+        Aplicaciones: hospitales, industrias, centros logísticos.
+      </em>
+    </div>
+  );
+}
+
+export function EquipoFlap() {
+  return (
+    <div className="equipos-tipo-block">
+      <h3 className="equipos-tipo-title">Flap:</h3>
+      <p className="equipos-tipo-text">Apertura tipo trampilla, rápida y compacta.</p>
+      <em className="equipos-tipo-meta">
+        Aplicaciones: bancos, supermercados, clínicas medianas.
+      </em>
+    </div>
+  );
+}
+
+
+export function SistemasEquipos() {
+  return (
+    <section className="equipos-sistemas">
+      <article className="sistema-block">
+        <h2>Sistema Punto a Punto</h2>
+        <p>
+          Un Sistema Neumático de Envíos Punto a Punto conecta únicamente dos
+          estaciones mediante una ruta directa y fija, sin desvíos en ambas
+          direcciones.
         </p>
-      </div>
-      <hr style={{ 
-  border: 'none', 
-  borderLeft: '1px solid white', // Change to borderLeft for vertical line
-  height: '90%', // Set the height of the vertical line
-  margin: '0 10px' // Adjust margins as needed
-}} />
-      <div className="contact-right">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="fullName">Nombre completo:</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="phoneNumber">Número de teléfono:</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="message">Mensaje:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          
-          <button type="submit" className="submit-button">
-            Enviar
-          </button>
-        </form>
-      </div>
-      
+      </article>
+
+      <article className="sistema-block">
+        <h2>Sistema Multipunto</h2>
+        <p>
+          Sistema automatizado que conecta tres o más estaciones mediante
+          tuberías y desviadores inteligentes, controlado por un software
+          central.
+        </p>
+        <p>
+          Permite envíos simultáneos y cruzados con gestión eficiente del
+          tráfico.
+        </p>
+        <em>Aplicaciones: hospitales, industrias, bancos, corporativos.</em>
+      </article>
     </section>
   );
 }
+
+export function RefrigeradoresFarmaceuticos() {
+  return (
+    <section className="products-section" aria-label="Refrigeradores farmacéuticos">
+      <div className="container container--narrow">
+        
+        <h2 className="products-section__title">
+          Refrigeradores farmacéuticos (2°C a 16°C)
+        </h2>
+
+        <p className="products-section__subtitle">
+          Garantiza la estabilidad de medicamentos, vacunas y muestras sensibles 
+          con un control preciso de temperatura y cumplimiento de las normativas 
+          más exigentes.
+        </p>
+
+        <div className="products-grid">
+
+          <article className="product-card">
+            <div className="product-card__image" aria-hidden="true"></div>
+            <h3>Lorem ipsum dolor sit</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </article>
+
+          <article className="product-card">
+            <div className="product-card__image" aria-hidden="true"></div>
+            <h3>Lorem ipsum dolor sit</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </article>
+
+          <article className="product-card">
+            <div className="product-card__image" aria-hidden="true"></div>
+            <h3>Lorem ipsum dolor sit</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 
 const App = () => {
   return (
@@ -267,13 +161,28 @@ const App = () => {
       
           <Scroll html style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 2 }}>
             {/* DOM contents in here will scroll along */}
-            {/* <HeroSection />
-            <SolutionsSection />
-            <AutomationSection />
-            <BankingSection />
-            <StatsSection />
-            <ContactSection />*/}
+             <HeroEquipos />
+             <TabsEquipos />
+              <div style={{ position: 'absolute', top: '80vh', left: '5vw' }}>
+                <EquipoSinen />
+              </div>
 
+              <div style={{ position: 'absolute', top: '120vh', left: '5vw' }}>
+                <EquipoDesliz />
+              </div>
+
+              <div style={{ position: 'absolute', top: '180vh', left: '5vw' }}>
+                <EquipoFlap />
+              </div>
+             
+
+              <div style={{ position: 'fixed', top: '220vh', left: '5vw', right: '5vw' }}>
+                <SistemasEquipos />
+              </div>
+
+              <div style={{ position: 'absolute', top: '320vh', left: '5vw', right: '5vw' }}>
+                <RefrigeradoresFarmaceuticos />
+              </div>
           </Scroll>
         </ScrollControls>
         <Environment preset="warehouse" />
