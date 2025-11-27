@@ -5,7 +5,7 @@ import { Environment, ScrollControls, Scroll, Html, useScroll } from '@react-thr
 import Model from './DIEGO CAPSULA';
 
 
-export function HeaderSNE() {
+export function Header() {
   useEffect(() => {
     const nav = document.getElementById("siteNav");
     const btn = document.getElementById("navToggle");
@@ -13,71 +13,187 @@ export function HeaderSNE() {
     const navChip = document.querySelector(".nav-chip");
     if (!nav || !btn || !overlay) return;
 
-    // *** el scroll REAL de drei no es window ***
-    const virtualScrollContainer = document.querySelector(".scroll-html");
+    const mqMobile = window.matchMedia("(max-width: 991px)");
+    let focusable = [];
+    let firstFocusable = null;
+    let lastFocusable = null;
 
-    const handleScroll = () => {
-      const y = virtualScrollContainer?.scrollTop || 0;
-      if (y > 10) {
+    function updateFocusable() {
+      focusable = Array.from(
+        nav.querySelectorAll(
+          "a, button, input, textarea, select, [tabindex]:not([tabindex='-1'])"
+        )
+      ).filter((el) => !el.disabled && el.offsetParent !== null);
+
+      firstFocusable = focusable[0] || null;
+      lastFocusable = focusable[focusable.length - 1] || null;
+    }
+
+    function handleTrap(e) {
+      if (e.key !== "Tab") return;
+      updateFocusable();
+      if (!firstFocusable) return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
         navChip?.classList.add("scrolled");
         nav?.classList.add("scrolled");
       } else {
         navChip?.classList.remove("scrolled");
         nav?.classList.remove("scrolled");
       }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    const open = () => {
+      nav.classList.add("is-open");
+      overlay.classList.add("is-open");
+      overlay.hidden = false;
+      overlay.setAttribute("aria-hidden", "false");
+
+      nav.setAttribute("aria-modal", "true");
+      nav.setAttribute("role", "dialog");
+      btn.setAttribute("aria-expanded", "true");
+
+      document.documentElement.style.overflow = "hidden";
+
+      updateFocusable();
+      const first = firstFocusable || nav.querySelector("a,button");
+      first && first.focus();
+
+      if (mqMobile.matches) document.addEventListener("keydown", handleTrap);
     };
 
-    virtualScrollContainer?.addEventListener("scroll", handleScroll, { passive: true });
+    const close = () => {
+      nav.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      setTimeout(() => (overlay.hidden = true), 250);
+
+      overlay.setAttribute("aria-hidden", "true");
+      btn.setAttribute("aria-expanded", "false");
+
+      nav.removeAttribute("aria-modal");
+      nav.removeAttribute("role");
+
+      document.documentElement.style.overflow = "";
+      btn.focus();
+
+      document.removeEventListener("keydown", handleTrap);
+    };
+
+    const toggle = () => (nav.classList.contains("is-open") ? close() : open());
+
+    btn.addEventListener("click", toggle);
+    overlay.addEventListener("click", close);
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        if (mqMobile.matches) close();
+      })
+    );
+
+    const parents = nav.querySelectorAll(".has-dd");
+
+    function closeAccs(except) {
+      parents.forEach((p) => {
+        if (p !== except) {
+          p.classList.remove("is-open");
+          const b = p.querySelector(".dd-btn");
+          b && b.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    parents.forEach((p) => {
+      const b = p.querySelector(".dd-btn");
+
+      b?.addEventListener("click", () => {
+        if (mqMobile.matches) {
+         const isOpen = p.classList.toggle("is-open");
+          b.setAttribute("aria-expanded", String(isOpen));
+          if (isOpen) closeAccs(p);
+        } else {
+          const isOpen = b.getAttribute("aria-expanded") === "true";
+          b.setAttribute("aria-expanded", String(!isOpen));
+        }
+      });
+
+      p.addEventListener("mouseenter", () => {
+        if (!mqMobile.matches) {
+          p.classList.add("is-open");
+          const b = p.querySelector(".dd-btn");
+          b?.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      p.addEventListener("mouseleave", () => {
+        if (!mqMobile.matches) {
+          p.classList.remove("is-open");
+          const b = p.querySelector(".dd-btn");
+          b?.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
 
     return () => {
-      virtualScrollContainer?.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      btn.removeEventListener("click", toggle);
+      overlay.removeEventListener("click", close);
+      window.removeEventListener("keydown", handleTrap);
     };
   }, []);
 
   return (
-    <>
-      <div className="overlay" id="navOverlay" hidden aria-hidden="true"></div>
+    <header className="site-header" role="banner" aria-label="Navegación principal">
+      <div className="container">
+        <div className="nav-chip">
+          <button className="toggle" id="navToggle">☰</button>
 
-      <header className="site-header">
-        <div className="container">
-          <div className="nav-chip">
-            <button id="navToggle" className="toggle">
-              <svg width="22" height="22" viewBox="0 0 24 24">
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="white" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
+          <ul className="nav" id="siteNav" role="menubar">
+            <li className="logo-nav"><img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" /></li>
+            <li><a className="link" href="/">Inicio</a></li>
+            <li><a className="link" href="/nosotros">Nosotros</a></li>
+            <li><a className="link" href="/soluciones">Soluciones</a></li>
+            <li><a className="link" href="/proyectos">Proyectos</a></li>
 
-            <ul id="siteNav" className="nav">
-              <li className="logo-nav">
-                <img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" alt="" />
-              </li>
+            <li className="has-dd">
+              <button className="link dd-btn">Productos<span className="caret"></span></button>
+              <div className="dropdown">
+                <a href="/productos/sistemas">Sistemas neumáticos</a>
+                <a href="/productos/capsulas">Cápsulas</a>
+                <a href="/productos/tuberia">Tubería y accesorios</a>
+                <a href="/productos/software">Software</a>
+              </div>
+            </li>
 
-              <li><a className="link" href="/">Inicio</a></li>
-              <li><a className="link active" href="/nosotros">Nosotros</a></li>
-              <li><a className="link" href="/soluciones">Soluciones</a></li>
-              <li><a className="link" href="/proyectos">Proyectos</a></li>
-
-              <li className="has-dd">
-                <button className="link dd-btn">
-                  Productos <span className="caret"></span>
-                </button>
-                <div className="dropdown">
-                  <a href="/productos/sistemas">Sistemas neumáticos</a>
-                  <a href="/productos/capsulas">Cápsulas</a>
-                  <a href="/productos/tuberia">Tubería y accesorios</a>
-                  <a href="/productos/software">Software</a>
-                </div>
-              </li>
-
-              <li><a className="link" href="#servicio">Servicio y Mantenimiento</a></li>
-              <li><a className="link" href="#contacto">Contacto</a></li>
-            </ul>
-          </div>
+            <li><a className="link" href="#">Servicio y mantenimiento</a></li>
+            <li><a className="link" href="#">Contacto</a></li>
+          </ul>
         </div>
-      </header>
-    </>
+      </div>
+      <div id="navOverlay" className="overlay" />
+    </header>
   );
 }
+
 
 
 export function HeroEquipos() {
@@ -319,6 +435,7 @@ const App = () => {
         <Model/>
 
       </Canvas> */}
+      <Header />
       <Canvas className="canvas-background" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 1 }}
      camera={{ position: [0, 0, 5], fov: 750 }}>
         <ScrollControls pages={6} distance={2}>
@@ -327,7 +444,7 @@ const App = () => {
          
           <Scroll html style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 2 }}>
             {/* DOM contents in here will scroll along */}
-              <HeaderSNE />
+              
              <HeroEquipos />
              <TabsEquipos />
               <div style={{ position: 'absolute', top: '80vh', left: '5vw' }}>
