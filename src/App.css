@@ -156,7 +156,7 @@ p {
   width: clamp(260px, 92vw, 1100px);
   margin-inline: clamp(8px, var(--safe-left), 24px) clamp(8px, var(--safe-right), 24px);
   border-radius: var(--chip-radius);
-  background: radial-gradient(180% 120% at 0% 0%, var(--glass-hi) 0%, transparent 35%), var(--glass-bg);
+  background: radial-gradient(180% 120% at 0% 0%, rgba(204, 0, 0, .15) 0%, transparent 35%), rgba(204, 0, 0, 0.353);
   border: 1px solid var(--glass-bd-2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 10px 30px rgba(0, 0, 0, .18);
   backdrop-filter: blur(12px) saturate(1.15);
