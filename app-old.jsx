@@ -7,30 +7,153 @@ import Model from './DIEGO CAPSULA';
 
 export function HeaderSNE() {
   useEffect(() => {
+    // ====== Drawer + Dropdowns (header) ======
     const nav = document.getElementById("siteNav");
     const btn = document.getElementById("navToggle");
     const overlay = document.getElementById("navOverlay");
     const navChip = document.querySelector(".nav-chip");
     if (!nav || !btn || !overlay) return;
 
-    // *** el scroll REAL de drei no es window ***
-    const virtualScrollContainer = document.querySelector(".scroll-html");
+    const mqMobile = window.matchMedia("(max-width: 991px)");
 
-    const handleScroll = () => {
-      const y = virtualScrollContainer?.scrollTop || 0;
-      if (y > 10) {
+    let focusable = [];
+    let firstFocusable = null;
+    let lastFocusable = null;
+
+    function updateFocusable() {
+      focusable = Array.from(
+        nav.querySelectorAll(
+          'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => !el.hasAttribute("disabled") && el.offsetParent !== null);
+
+      firstFocusable = focusable[0] || null;
+      lastFocusable = focusable[focusable.length - 1] || null;
+    }
+
+    function handleKeydownTrap(e) {
+      if (e.key !== "Tab") return;
+      updateFocusable();
+      if (!firstFocusable) return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+
+    function handleScroll() {
+      if (window.scrollY > 10) {
         navChip?.classList.add("scrolled");
         nav?.classList.add("scrolled");
       } else {
         navChip?.classList.remove("scrolled");
         nav?.classList.remove("scrolled");
       }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    const open = () => {
+      nav.classList.add("is-open");
+      overlay.classList.add("is-open");
+      overlay.hidden = false;
+      overlay.setAttribute("aria-hidden", "false");
+
+      nav.setAttribute("aria-modal", "true");
+      nav.setAttribute("role", "dialog");
+      btn.setAttribute("aria-expanded", "true");
+
+      document.documentElement.style.overflow = "hidden";
+
+      updateFocusable();
+      const first = firstFocusable || nav.querySelector("a,button");
+      first && first.focus();
+
+      if (mqMobile.matches) document.addEventListener("keydown", handleKeydownTrap);
     };
 
-    virtualScrollContainer?.addEventListener("scroll", handleScroll, { passive: true });
+    const close = () => {
+      nav.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+
+      setTimeout(() => (overlay.hidden = true), 250);
+      overlay.setAttribute("aria-hidden", "true");
+
+      btn.setAttribute("aria-expanded", "false");
+      nav.removeAttribute("aria-modal");
+      nav.removeAttribute("role");
+
+      document.documentElement.style.overflow = "";
+      btn.focus();
+
+      document.removeEventListener("keydown", handleKeydownTrap);
+    };
+
+    const toggle = () => (nav.classList.contains("is-open") ? close() : open());
+
+    btn.addEventListener("click", toggle);
+    overlay.addEventListener("click", close);
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        if (mqMobile.matches) close();
+      })
+    );
+
+    const parents = nav.querySelectorAll(".has-dd");
+
+    function closeAllAccordions(except) {
+      parents.forEach((p) => {
+        if (p !== except) {
+          p.classList.remove("is-open");
+          const b = p.querySelector(".dd-btn");
+          b && b.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    parents.forEach((p) => {
+      const b = p.querySelector(".dd-btn");
+
+      b?.addEventListener("click", () => {
+        if (mqMobile.matches) {
+          const isOpen = p.classList.toggle("is-open");
+          b.setAttribute("aria-expanded", String(isOpen));
+          if (isOpen) closeAllAccordions(p);
+        }
+      });
+
+      p.addEventListener("mouseenter", () => {
+        if (!mqMobile.matches) {
+          p.classList.add("is-open");
+          b && b.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      p.addEventListener("mouseleave", () => {
+        if (!mqMobile.matches) {
+          p.classList.remove("is-open");
+          b && b.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
 
     return () => {
-      virtualScrollContainer?.removeEventListener("scroll", handleScroll);
+      // cleanup
+      btn.removeEventListener("click", toggle);
+      overlay.removeEventListener("click", close);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -38,18 +161,32 @@ export function HeaderSNE() {
     <>
       <div className="overlay" id="navOverlay" hidden aria-hidden="true"></div>
 
-      <header className="site-header">
+      <header className="site-header" role="banner" aria-label="Navegación principal">
         <div className="container">
           <div className="nav-chip">
-            <button id="navToggle" className="toggle">
-              <svg width="22" height="22" viewBox="0 0 24 24">
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <button
+              className="toggle"
+              id="navToggle"
+              aria-expanded="false"
+              aria-controls="siteNav"
+              aria-label="Abrir menú"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 6h18M3 12h18M3 18h18"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
               </svg>
             </button>
 
-            <ul id="siteNav" className="nav">
+            <ul className="nav" id="siteNav" role="menubar">
               <li className="logo-nav">
-                <img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" alt="" />
+                <img
+                  src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png"
+                  alt="Logo SNE"
+                />
               </li>
 
               <li><a className="link" href="/">Inicio</a></li>
@@ -58,7 +195,7 @@ export function HeaderSNE() {
               <li><a className="link" href="/proyectos">Proyectos</a></li>
 
               <li className="has-dd">
-                <button className="link dd-btn">
+                <button className="link dd-btn" aria-expanded="false">
                   Productos <span className="caret"></span>
                 </button>
                 <div className="dropdown">
@@ -78,7 +215,6 @@ export function HeaderSNE() {
     </>
   );
 }
-
 
 export function HeroEquipos() {
   return (
@@ -327,7 +463,7 @@ const App = () => {
          
           <Scroll html style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 2 }}>
             {/* DOM contents in here will scroll along */}
-              <HeaderSNE />
+            <HeaderSNE />
              <HeroEquipos />
              <TabsEquipos />
               <div style={{ position: 'absolute', top: '80vh', left: '5vw' }}>
@@ -350,11 +486,7 @@ const App = () => {
               <div style={{ position: 'absolute', top: '320vh', left: '5vw', right: '5vw' }}>
                 <RefrigeradoresFarmaceuticos />
               </div>
-              
-              <div style={{ position: 'absolute', top: '562vh', left: '5vw', right: '5vw' }}>
-                 <Footer />
-              </div>
-             
+              <Footer />
           </Scroll>
           
         </ScrollControls>
