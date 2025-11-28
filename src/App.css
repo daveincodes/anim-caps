@@ -452,7 +452,7 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 22px;
-  margin: 40px;
+  margin: 40px auto;
 }
 
 .equipos-tab {
@@ -465,6 +465,7 @@ p {
   font-size: 1.3rem;
   background: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+  text-align: center;
 }
 
 .equipos-tipos {
@@ -540,6 +541,175 @@ p {
   background: #f7d4d4;
 }
 
+/* ========== RESPONSIVE EQUIPOS ========= */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 991px) {
+  .equipos-section {
+    padding: 60px 0 50px;
+  }
+
+  .equipos-tabs {
+    margin: 32px 20px;
+    gap: 16px;
+  }
+
+  .equipos-tab {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+  }
+
+  .equipos-tipos {
+    margin: 0 20px 48px;
+  }
+
+  .sistema-block h2 {
+    font-size: 1.4rem;
+  }
+
+  .sistema-block p {
+    font-size: 0.96rem;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .equipos-section {
+    padding: 48px 0 40px;
+  }
+
+  .equipos-tabs {
+    margin: 24px 16px;
+    gap: 12px;
+  }
+
+  .equipos-tab {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+
+  .equipos-tipos {
+    max-width: 100%;
+    margin: 0 16px 40px;
+  }
+
+  .equipos-tipo h3 {
+    font-size: 1rem;
+  }
+
+  .equipos-tipo p {
+    font-size: 0.94rem;
+  }
+
+  .equipos-tipo em {
+    font-size: 0.85rem;
+  }
+
+  .equipos-sistemas {
+    padding-top: 28px;
+    margin: 0 16px;
+  }
+
+  .sistema-block {
+    margin-bottom: 28px;
+  }
+
+  .sistema-block h2 {
+    font-size: 1.25rem;
+  }
+
+  .sistema-block p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+}
+
+/* Mobile chico (<= 480px) */
+@media (max-width: 480px) {
+  .equipos-section {
+    padding: 40px 0 32px;
+  }
+
+  .equipos-tabs {
+    margin: 20px 12px;
+    gap: 10px;
+  }
+
+  .equipos-tab {
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+
+  .equipos-tipos {
+    margin: 0 12px 32px;
+  }
+
+  .sistema-block h2 {
+    font-size: 1.15rem;
+  }
+
+  .sistema-block p {
+    font-size: 0.9rem;
+  }
+
+  .sistema-block em {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ===== Scroll HTML responsive layout ===== */
+
+.scroll-wrapper {
+  position: absolute;
+  left: 5vw;
+  right: 5vw;
+  width: 90vw;
+}
+
+/* Posiciones base en desktop */
+.scroll-sinen     { top: 80vh; }
+.scroll-desliz    { top: 120vh; }
+.scroll-flap      { top: 180vh; }
+.scroll-sistemas  { top: 240vh; }
+.scroll-footer    { top: 580vh; }
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .scroll-sinen     { top: 90vh; }
+  .scroll-desliz    { top: 150vh; }
+  .scroll-flap      { top: 210vh; }
+  .scroll-sistemas  { top: 280vh; }
+  .scroll-footer    { top: 650vh; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .scroll-wrapper { 
+    left: 4vw; 
+    right: 4vw; 
+    width: 92vw;
+  }
+
+  .scroll-sinen     { top: 110vh; }
+  .scroll-desliz    { top: 180vh; }
+  .scroll-flap      { top: 260vh; }
+  .scroll-sistemas  { top: 350vh; }
+  .scroll-footer    { top: 780vh; }
+}
+
+/* ===== Mobile pequeño ===== */
+@media (max-width: 480px) {
+  .scroll-sinen     { top: 130vh; }
+  .scroll-desliz    { top: 210vh; }
+  .scroll-flap      { top: 300vh; }
+  .scroll-sistemas  { top: 400vh; }
+  .scroll-footer    { top: 900vh; }
+}
 
 
 /* ========= PRODUCTS SECTION ========= */

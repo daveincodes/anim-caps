@@ -127,7 +127,7 @@ export function Header() {
 
       b?.addEventListener("click", () => {
         if (mqMobile.matches) {
-         const isOpen = p.classList.toggle("is-open");
+          const isOpen = p.classList.toggle("is-open");
           b.setAttribute("aria-expanded", String(isOpen));
           if (isOpen) closeAccs(p);
         } else {
@@ -170,8 +170,8 @@ export function Header() {
           <ul className="nav" id="siteNav" role="menubar">
             <li className="logo-nav">
               <img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" />
-              </li>
-             <li role="none">
+            </li>
+            <li role="none">
               <a className="link" href="https://sitio-sne-code.webflow.io/" role="menuitem" target='_top'>Inicio</a>
             </li>
             <li role="none">
@@ -186,7 +186,7 @@ export function Header() {
 
             <li className="has-dd" role="none">
               <button
-                className ="link dd-btn"
+                className="link dd-btn"
                 type="button"
                 aria-expanded="false"
                 aria-haspopup="true"
@@ -203,7 +203,7 @@ export function Header() {
 
             <li role="none">
               <a className="link" href="https://sitio-sne-code.webflow.io/servicio" role="menuitem" target='_top'
-                >Servicio y Mantenimiento</a
+              >Servicio y Mantenimiento</a
               >
             </li>
             <li role="none">
@@ -327,7 +327,7 @@ export function Footer() {
           <p className="small">
             Ventas: 55 5377 2170 ext.2483 ·
             <a href="mailto:ventas@motioncorp.com.mx"
-              >ventas@motioncorp.com.mx</a
+            >ventas@motioncorp.com.mx</a
             >
           </p>
         </div>
@@ -337,7 +337,7 @@ export function Footer() {
             <a
               href="https://motioncorp.com.mx/contacto-bolsadetrabajo/"
               target="_blank"
-              >Trabaja con nosotros</a
+            >Trabaja con nosotros</a
             >
             <a href="/contacto">Contacto</a>
           </div>
@@ -418,39 +418,38 @@ const App = () => {
       </Canvas> */}
       <Header />
       <Canvas className="canvas-background" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 1 }}
-     camera={{ position: [0, 0, 5], fov: 750 }}>
+        camera={{ position: [0, 0, 5], fov: 750 }}>
         <ScrollControls pages={6} distance={2}>
           <Model />
-          
-         
+
+
           <Scroll html style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 2 }}>
             {/* DOM contents in here will scroll along */}
-              
-             <HeroEquipos />
-             <TabsEquipos />
-              <div style={{ position: 'absolute', top: '80vh', left: '5vw' }}>
-                <EquipoSinen />
-              </div>
 
-              <div style={{ position: 'absolute', top: '120vh', left: '5vw' }}>
-                <EquipoDesliz />
-              </div>
+            <HeroEquipos />
+            <TabsEquipos />
+            <div className="scroll-wrapper scroll-sinen">
+              <EquipoSinen />
+            </div>
 
-              <div style={{ position: 'absolute', top: '180vh', left: '5vw' }}>
-                <EquipoFlap />
-              </div>
-             
+            <div className="scroll-wrapper scroll-desliz">
+              <EquipoDesliz />
+            </div>
 
-              <div style={{ position: 'fixed', top: '220vh', left: '5vw', right: '5vw' }}>
-                <SistemasEquipos />
-              </div>
-              
-              <div style={{ position: 'absolute', top: '566vh'}}>
-                 <Footer />
-              </div>
-             
+            <div className="scroll-wrapper scroll-flap">
+              <EquipoFlap />
+            </div>
+
+            <div className="scroll-wrapper scroll-sistemas">
+              <SistemasEquipos />
+            </div>
+
+            <div className="scroll-wrapper scroll-footer">
+              <Footer />
+            </div>
+
           </Scroll>
-          
+
         </ScrollControls>
         <Environment preset="warehouse" />
       </Canvas>
