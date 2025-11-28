@@ -666,8 +666,6 @@ p {
 
 .scroll-wrapper {
   position: absolute;
-  left: 5vw;
-  right: 5vw;
   width: 90vw;
 }
 
@@ -677,7 +675,7 @@ p {
 .scroll-flap      { top: 180vh; }
 .scroll-sistemas  { top: 240vh; }
 .scroll-modelos   { top: 420vh; }
-.scroll-footer    { top: 500vh; }
+.scroll-footer    { top: 562vh; }
 
 /* ===== Tablet ===== */
 @media (max-width: 1024px) {
@@ -685,7 +683,7 @@ p {
   .scroll-desliz    { top: 150vh; }
   .scroll-flap      { top: 210vh; }
   .scroll-sistemas  { top: 280vh; }
-  .scroll-footer    { top: 650vh; }
+  .scroll-footer    { top: 580vh; }
 }
 
 /* ===== Mobile ===== */
