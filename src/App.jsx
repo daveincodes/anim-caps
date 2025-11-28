@@ -310,6 +310,59 @@ export function SistemasEquipos() {
 }
 
 
+export function ModelosControl() {
+  return (
+    <section className="modelos-section">
+      <div className="container container--narrow">
+
+        <h2 className="modelos-title">Modelos de Control</h2>
+
+        <div className="modelos-grid">
+
+          <article className="modelo-card">
+            <h3 className="modelo-title">AC 660</h3>
+            <p className="modelo-desc">
+              Hasta 99 estaciones, sin zonas independientes. Control por microprocesador autónomo,
+              registro de hasta 5,000 transacciones e interfaz básica mediante botones.
+            </p>
+            <em className="modelo-meta">
+              Ideal para casetas de peaje, retail y bancos.  
+              Nivel de automatización: <strong>medio</strong>.
+            </em>
+          </article>
+
+          <article className="modelo-card">
+            <h3 className="modelo-title">AC 3000</h3>
+            <p className="modelo-desc">
+              Hasta 500 estaciones, 64 zonas independientes. Control mediante PC con software
+              Windows, trazabilidad con RFID y log completo. Compatible con pantallas y lectores.
+            </p>
+            <em className="modelo-meta">
+              Ideal para hospitales grandes e industrias medianas.  
+              Nivel de automatización: <strong>alto</strong>.
+            </em>
+          </article>
+
+          <article className="modelo-card">
+            <h3 className="modelo-title">AC 4000</h3>
+            <p className="modelo-desc">
+              Estaciones y zonas ilimitadas. Control por software cliente-servidor (Linux/Windows),
+              trazabilidad avanzada con RFID e historial en SQL. Interfaz táctil con favoritos y RFID.
+            </p>
+            <em className="modelo-meta">
+              Ideal para hospitales de alta complejidad y centros logísticos.  
+              Nivel de automatización: <strong>muy alto</strong>.
+            </em>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
 
 export function Footer() {
   return (
@@ -442,6 +495,10 @@ const App = () => {
 
             <div className="scroll-wrapper scroll-sistemas">
               <SistemasEquipos />
+            </div>
+
+            <div className="scroll-wrapper scroll-modelos">
+              <ModelosControl />
             </div>
 
             <div className="scroll-wrapper scroll-footer">
