@@ -309,63 +309,12 @@ export function SistemasEquipos() {
   );
 }
 
-export function RefrigeradoresFarmaceuticos() {
-  return (
-    <section className="products-section" aria-label="Refrigeradores farmacéuticos">
-      <div className="container container--narrow">
-        
-        <h2 className="products-section__title">
-          Refrigeradores farmacéuticos (2°C a 16°C)
-        </h2>
 
-        <p className="products-section__subtitle">
-          Garantiza la estabilidad de medicamentos, vacunas y muestras sensibles 
-          con un control preciso de temperatura y cumplimiento de las normativas 
-          más exigentes.
-        </p>
-
-        <div className="products-grid">
-
-          <article className="product-card">
-            <div className="product-card__image" aria-hidden="true"></div>
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </article>
-
-          <article className="product-card">
-            <div className="product-card__image" aria-hidden="true"></div>
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </article>
-
-          <article className="product-card">
-            <div className="product-card__image" aria-hidden="true"></div>
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-  );
-}
 
 export function Footer() {
   return (
     <footer id="contacto" className="site-footer">
       <div className="container fgrid">
-        
-        {/* Columna 1 */}
         <div>
           <div className="fbrand">
             <img
@@ -376,37 +325,38 @@ export function Footer() {
             />
           </div>
           <p className="small">
-            Ventas: 55 5377 2170 ext.2483 ·{" "}
-            <a href="mailto:ventas@motioncorp.com.mx">
-              ventas@motioncorp.com.mx
-            </a>
+            Ventas: 55 5377 2170 ext.2483 ·
+            <a href="mailto:ventas@motioncorp.com.mx"
+              >ventas@motioncorp.com.mx</a
+            >
           </p>
         </div>
-
-        {/* Columna 2 */}
         <div>
           <strong>Nosotros</strong>
           <div className="flist">
-            <a href="#nosotros">Trabaja con nosotros</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#terminos">Términos y condiciones</a>
+            <a
+              href="https://motioncorp.com.mx/contacto-bolsadetrabajo/"
+              target="_blank"
+              >Trabaja con nosotros</a
+            >
+            <a href="/contacto">Contacto</a>
           </div>
         </div>
-
-        {/* Columna 3 */}
         <div>
           <strong>Ayuda</strong>
           <div className="flist">
-            <a href="#preguntas">Preguntas</a>
             <a href="#privacidad">Política de privacidad</a>
           </div>
         </div>
-
-        {/* Columna 4 */}
         <div>
           <strong>Síguenos</strong>
           <div className="social">
-            <a href="#" aria-label="Facebook" title="Facebook">
+            <a
+              href="https://www.facebook.com/snemotioncorp"
+              target="_blank"
+              aria-label="Facebook"
+              title="Facebook"
+            >
               <img
                 src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/691d00db3c23387bb5169ea1_Facebook.svg"
                 alt="Facebook"
@@ -414,7 +364,12 @@ export function Footer() {
                 height="80"
               />
             </a>
-            <a href="#" aria-label="Instagram" title="Instagram">
+            <a
+              href="https://www.instagram.com/sistemasneumaticosdeenvios?igsh=NnJhMGtjYzhubWxv"
+              target="_blank"
+              aria-label="Instagram"
+              title="Instagram"
+            >
               <img
                 src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/691d00dc9cafd49e0689fc6f_Instagram.svg"
                 alt="Instagram"
@@ -422,7 +377,12 @@ export function Footer() {
                 height="80"
               />
             </a>
-            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/sistemas-neumaticos-de-envio-sne/posts/?feedView=all"
+              target="_blank"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
               <img
                 src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/691d00dcbf75e267865d0433_LinkedIn.svg"
                 alt="LinkedIn"
@@ -433,8 +393,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Copyright */}
       <div className="copyright-section">
         <div className="copyright-container">
           <p className="copyright">
@@ -485,10 +443,6 @@ const App = () => {
 
               <div style={{ position: 'fixed', top: '220vh', left: '5vw', right: '5vw' }}>
                 <SistemasEquipos />
-              </div>
-
-              <div style={{ position: 'absolute', top: '320vh', left: '5vw', right: '5vw' }}>
-                <RefrigeradoresFarmaceuticos />
               </div>
               
               <div style={{ position: 'absolute', top: '566vh'}}>
