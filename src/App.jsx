@@ -501,7 +501,7 @@ const App = () => {
               <ModelosControl />
             </div>
 
-            <div className="scroll-wrapper scroll-footer">
+            <div className="scroll-wrapper-footer scroll-footer">
               <Footer />
             </div>
 

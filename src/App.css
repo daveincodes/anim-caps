@@ -665,6 +665,13 @@ p {
 /* ===== Scroll HTML responsive layout ===== */
 
 .scroll-wrapper {
+  left: 5vw; 
+  right: 5vw;
+  position: absolute;
+  width: 90vw;
+}
+
+.scroll-wrapper-footer {
   position: absolute;
   width: 90vw;
 }
@@ -861,7 +868,6 @@ p {
 
 .modelos-section {
   padding: 70px 0;
-  background: #fff;
 }
 
 .modelos-title {
