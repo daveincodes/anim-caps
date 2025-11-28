@@ -172,16 +172,16 @@ export function Header() {
               <img src="https://cdn.prod.website-files.com/68ddba1faf3f222fd7f626dc/68ddbf7bd63c6397c0d89bc9_sne_blanco.png" />
               </li>
              <li role="none">
-              <a className="link" href="https://sitio-sne-code.webflow.io/" role="menuitem">Inicio</a>
+              <a className="link" href="https://sitio-sne-code.webflow.io/" role="menuitem" target='_top'>Inicio</a>
             </li>
             <li role="none">
-              <a className="link" href="https://sitio-sne-code.webflow.io/nosotros" role="menuitem">Nosotros</a>
+              <a className="link" href="https://sitio-sne-code.webflow.io/nosotros" role="menuitem" target='_top'>Nosotros</a>
             </li>
             <li role="none">
-              <a class="link" href="https://sitio-sne-code.webflow.io/soluciones" role="menuitem">Soluciones</a>
+              <a className="link" href="https://sitio-sne-code.webflow.io/soluciones" role="menuitem" target='_top'>Soluciones</a>
             </li>
             <li role="none">
-              <a className="link" href="https://sitio-sne-code.webflow.io/proyectos" role="menuitem">Proyectos</a>
+              <a className="link" href="https://sitio-sne-code.webflow.io/proyectos" role="menuitem" target='_top'>Proyectos</a>
             </li>
 
             <li className="has-dd" role="none">
@@ -195,19 +195,19 @@ export function Header() {
                 Productos<span className="caret"></span>
               </button>
               <div className="dropdown" role="menu" aria-label="Submenú Productos">
-                <a href="https://sitio-sne-code.webflow.io/productos" role="menuitem">Productos</a>
-                <a href="https://sitio-sne-code.webflow.io/nuestras-capsulas" role="menuitem">Cápsulas</a>
-                <a href="https://sitio-sne-code.webflow.io/otros" role="menuitem">Otros</a>
+                <a href="https://sitio-sne-code.webflow.io/productos" role="menuitem" target='_top'>Productos</a>
+                <a href="https://sitio-sne-code.webflow.io/nuestras-capsulas" role="menuitem" target='_top'>Cápsulas</a>
+                <a href="https://sitio-sne-code.webflow.io/otros" role="menuitem" target='_top'>Otros</a>
               </div>
             </li>
 
             <li role="none">
-              <a className="link" href="https://sitio-sne-code.webflow.io/servicio" role="menuitem"
+              <a className="link" href="https://sitio-sne-code.webflow.io/servicio" role="menuitem" target='_top'
                 >Servicio y Mantenimiento</a
               >
             </li>
             <li role="none">
-              <a className="link" href="https://sitio-sne-code.webflow.io/contacto" role="menuitem">Contacto</a>
+              <a className="link" href="https://sitio-sne-code.webflow.io/contacto" role="menuitem" target='_top'>Contacto</a>
             </li>
           </ul>
         </div>
