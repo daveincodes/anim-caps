@@ -318,7 +318,6 @@ export function ModelosControl() {
         <h2 className="modelos-title">Modelos de Control</h2>
 
         <div className="modelos-grid">
-
           <article className="modelo-card">
             <h3 className="modelo-title">AC 660</h3>
             <p className="modelo-desc">
