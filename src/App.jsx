@@ -197,7 +197,7 @@ export function Header() {
               <div className="dropdown" role="menu" aria-label="Submenú Productos">
                 <a href="https://sitio-sne-code.webflow.io/productos" role="menuitem" target='_top'>Productos</a>
                 <a href="https://sitio-sne-code.webflow.io/nuestras-capsulas" role="menuitem" target='_top'>Cápsulas</a>
-                <a href="https://sitio-sne-code.webflow.io/otros" role="menuitem" target='_top'>Otros</a>
+                {/* <a href="https://sitio-sne-code.webflow.io/otros" role="menuitem" target='_top'>Otros</a> */}
               </div>
             </li>
 
