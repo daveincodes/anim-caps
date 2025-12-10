@@ -293,12 +293,11 @@ export function ModelosControl() {
           <article className="modelo-glass-card">
             <h3 className="modelo-glass-title">AC 660</h3>
             <p className="modelo-glass-desc">
-              Hasta 99 estaciones, sin zonas independientes. Control por microprocesador autónomo,
-              registro de hasta 5,000 transacciones e interfaz básica mediante botones.
+              Diseñado para conectar hasta 99 estaciones a través de una red eficiente y controlada por microprocesador. Su operación es totalmente automática, sin necesidad de un PC dedicado, y permite el envío y recepción de cápsulas de forma bidireccional cuando se utilizan desviadores (diverters).
             </p>
             <em className="modelo-glass-meta">
-              Ideal para casetas de peaje, retail y bancos.<br />
-              Nivel de automatización: <strong>medio</strong>.
+              Aplicaciones principales:
+              Por su tamaño compacto, fiabilidad y eficiencia, es ideal para aplicaciones que requieren agilidad y seguridad en espacios reducidos. Ideal para casetas de peaje, al permitir el traslado rápido y seguro de efectivo entre las cabinas y la oficina administrativa.
             </em>
           </article>
 
@@ -306,12 +305,13 @@ export function ModelosControl() {
           <article className="modelo-glass-card">
             <h3 className="modelo-glass-title">AC 3000</h3>
             <p className="modelo-glass-desc">
-              Hasta 500 estaciones, 64 zonas independientes. Control mediante PC con software
-              Windows, trazabilidad con RFID y log completo. Compatible con pantallas y lectores.
+              Diseñado para instalaciones con múltiples áreas que necesitan envíos frecuentes, rápidos y seguros entre estaciones, ideal para edificios grandes o múltiples áreas;  Soporta múltiples rutas, desvíos y cápsulas en tránsito.
             </p>
             <em className="modelo-glass-meta">
-              Ideal para hospitales grandes e industrias medianas.<br />
-              Nivel de automatización: <strong>alto</strong>.
+              Hasta 500 estaciones conectadas en red,64 zonas independientes, control total mediante software Windows, Seguimiento con tecnología RFID y registro de auditoría
+
+              Aplicaciones principales:
+              Hospitales medianos o de alta especialidad, laboratorios centrales, industrias manufactureras, centros logísticos y corporativos con alto volumen de operaciones internas.
             </em>
           </article>
 
@@ -319,12 +319,16 @@ export function ModelosControl() {
           <article className="modelo-glass-card">
             <h3 className="modelo-glass-title">AC 4000</h3>
             <p className="modelo-glass-desc">
-              Estaciones y zonas ilimitadas. Control por software cliente-servidor (Linux/Windows),
-              trazabilidad avanzada con RFID e historial en SQL. Interfaz táctil con favoritos y RFID.
+              Es la solución más avanzada de Aerocom, diseñada para adaptarse a cualquier tamaño sin límite de estaciones o zonas. Se caracteriza por su alto nivel de automatización, seguridad y trazabilidad.
             </p>
             <em className="modelo-glass-meta">
-              Ideal para hospitales de alta complejidad y centros logísticos.<br />
-              Nivel de automatización: <strong>muy alto</strong>.
+              •Escalabilidad ilimitada: soporta cualquier número de estaciones, líneas y zonas.
+              •Interfaz moderna: pantalla táctil intuitiva con funciones de favoritos, directorio, prioridades y envío seguro.
+              •Software cliente‑servidor, compatible con Linux o Windows, base de datos SQL para registros, auditoría y respaldo. 
+              •Funcionalidad avanzada de seguridad: incluye opciones RFID para asegurar el envío de cápsulas y seguimiento. 
+
+              Aplicaciones ideales:
+              Hospitales grandes, laboratorios centrales, industrias complejas, centros logísticos y corporativos con muchas estaciones, donde se requiere máximo control, seguridad operativa y trazabilidad.
             </em>
           </article>
         </div>
