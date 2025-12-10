@@ -256,9 +256,7 @@ export function SistemasEquipos() {
         <article className="sistema-card">
           <h2>Sistema Punto a Punto</h2>
           <p>
-            Un Sistema Neumático de Envíos Punto a Punto conecta únicamente dos
-            estaciones mediante una ruta directa y fija, sin desvíos en ambas
-            direcciones.
+            Un Sistema Neumático de Envíos Punto a Punto conecta exclusivamente dos estaciones o áreas mediante una red directa, permitiendo el envío de cápsulas en una sola ruta fija y sin desvíos intermedios.
           </p>
         </article>
 
@@ -266,13 +264,10 @@ export function SistemasEquipos() {
         <article className="sistema-card">
           <h2>Sistema Multipunto</h2>
           <p>
-            Sistema automatizado que conecta tres o más estaciones mediante
-            tuberías y desviadores inteligentes, controlado por un software
-            central.
+            Un sistema neumático multipunto es una red automatizada que permite el envío y recepción entre tres o más estaciones con desviadores inteligentes y controlado por un software central; permite envíos simultáneos y cruzados con gestión eficiente del tráfico.
           </p>
           <p>
-            Permite envíos simultáneos y cruzados con gestión eficiente del
-            tráfico.
+           Es ideal para instalaciones de alta demanda operativa, como hospitales, industrias, bancos o corporativos, donde se necesita conectar múltiples áreas funcionales.
           </p>
           <em>Aplicaciones: hospitales, industrias, bancos, corporativos.</em>
         </article>
