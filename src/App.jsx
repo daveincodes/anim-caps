@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import './App.css';
 import { Environment, ScrollControls, Scroll, Html, useScroll } from '@react-three/drei';
 import Model from './DIEGO CAPSULA';
+import { div } from 'three/examples/jsm/nodes/Nodes.js';
 
 
 export function Header() {
@@ -234,48 +235,15 @@ export function HeroEquipos() {
 
 export function TabsEquipos() {
   return (
-    <div className="equipos-tabs">
-      <span className="equipos-tab">Unidireccionales</span>
-      <span className="equipos-tab">Bidireccionales</span>
-      <span className="equipos-tab">Multipunto</span>
-    </div>
-  );
-}
 
-
-export function EquipoSinen() {
-  return (
-    <div className="equipos-tipo-block">
-      <h3 className="equipos-tipo-title">Sinen:</h3>
-      <p className="equipos-tipo-text">Bajo costo, sin mecanismos automáticos.</p>
-      <em className="equipos-tipo-meta">
-        Aplicaciones: gasolineras, oficinas pequeñas, comercios.
-      </em>
+    <div>
+       <h2 className="titulo-sistemas">Tipos de Sistemas</h2>
+        <div className="equipos-tabs">
+          <span className="equipos-tab">Punto a punto</span>
+          <span className="equipos-tab">Multipunto</span>
+        </div>
     </div>
-  );
-}
-
-export function EquipoDesliz() {
-  return (
-    <div className="equipos-tipo-block">
-      <h3 className="equipos-tipo-title">Deslizable:</h3>
-      <p className="equipos-tipo-text">Puerta corrediza para mayor control.</p>
-      <em className="equipos-tipo-meta">
-        Aplicaciones: hospitales, industrias, centros logísticos.
-      </em>
-    </div>
-  );
-}
-
-export function EquipoFlap() {
-  return (
-    <div className="equipos-tipo-block">
-      <h3 className="equipos-tipo-title">Flap:</h3>
-      <p className="equipos-tipo-text">Apertura tipo trampilla, rápida y compacta.</p>
-      <em className="equipos-tipo-meta">
-        Aplicaciones: bancos, supermercados, clínicas medianas.
-      </em>
-    </div>
+    
   );
 }
 
@@ -283,28 +251,32 @@ export function EquipoFlap() {
 export function SistemasEquipos() {
   return (
     <section className="equipos-sistemas">
-      <article className="sistema-block">
-        <h2>Sistema Punto a Punto</h2>
-        <p>
-          Un Sistema Neumático de Envíos Punto a Punto conecta únicamente dos
-          estaciones mediante una ruta directa y fija, sin desvíos en ambas
-          direcciones.
-        </p>
-      </article>
+      <div className="cards-container">
+        {/* Card 1 - Sistema Punto a Punto */}
+        <article className="sistema-card">
+          <h2>Sistema Punto a Punto</h2>
+          <p>
+            Un Sistema Neumático de Envíos Punto a Punto conecta únicamente dos
+            estaciones mediante una ruta directa y fija, sin desvíos en ambas
+            direcciones.
+          </p>
+        </article>
 
-      <article className="sistema-block">
-        <h2>Sistema Multipunto</h2>
-        <p>
-          Sistema automatizado que conecta tres o más estaciones mediante
-          tuberías y desviadores inteligentes, controlado por un software
-          central.
-        </p>
-        <p>
-          Permite envíos simultáneos y cruzados con gestión eficiente del
-          tráfico.
-        </p>
-        <em>Aplicaciones: hospitales, industrias, bancos, corporativos.</em>
-      </article>
+        {/* Card 2 - Sistema Multipunto */}
+        <article className="sistema-card">
+          <h2>Sistema Multipunto</h2>
+          <p>
+            Sistema automatizado que conecta tres o más estaciones mediante
+            tuberías y desviadores inteligentes, controlado por un software
+            central.
+          </p>
+          <p>
+            Permite envíos simultáneos y cruzados con gestión eficiente del
+            tráfico.
+          </p>
+          <em>Aplicaciones: hospitales, industrias, bancos, corporativos.</em>
+        </article>
+      </div>
     </section>
   );
 }
@@ -314,48 +286,48 @@ export function ModelosControl() {
   return (
     <section className="modelos-section">
       <div className="container container--narrow">
+        <h2 className="modelos-main-title">Modelos de Control</h2>
 
-        <h2 className="modelos-title">Modelos de Control</h2>
-
-        <div className="modelos-grid">
-          <article className="modelo-card">
-            <h3 className="modelo-title">AC 660</h3>
-            <p className="modelo-desc">
+        <div className="modelos-cards-grid">
+          {/* Tarjeta AC 660 */}
+          <article className="modelo-glass-card">
+            <h3 className="modelo-glass-title">AC 660</h3>
+            <p className="modelo-glass-desc">
               Hasta 99 estaciones, sin zonas independientes. Control por microprocesador autónomo,
               registro de hasta 5,000 transacciones e interfaz básica mediante botones.
             </p>
-            <em className="modelo-meta">
-              Ideal para casetas de peaje, retail y bancos.  
+            <em className="modelo-glass-meta">
+              Ideal para casetas de peaje, retail y bancos.<br />
               Nivel de automatización: <strong>medio</strong>.
             </em>
           </article>
 
-          <article className="modelo-card">
-            <h3 className="modelo-title">AC 3000</h3>
-            <p className="modelo-desc">
+          {/* Tarjeta AC 3000 */}
+          <article className="modelo-glass-card">
+            <h3 className="modelo-glass-title">AC 3000</h3>
+            <p className="modelo-glass-desc">
               Hasta 500 estaciones, 64 zonas independientes. Control mediante PC con software
               Windows, trazabilidad con RFID y log completo. Compatible con pantallas y lectores.
             </p>
-            <em className="modelo-meta">
-              Ideal para hospitales grandes e industrias medianas.  
+            <em className="modelo-glass-meta">
+              Ideal para hospitales grandes e industrias medianas.<br />
               Nivel de automatización: <strong>alto</strong>.
             </em>
           </article>
 
-          <article className="modelo-card">
-            <h3 className="modelo-title">AC 4000</h3>
-            <p className="modelo-desc">
+          {/* Tarjeta AC 4000 */}
+          <article className="modelo-glass-card">
+            <h3 className="modelo-glass-title">AC 4000</h3>
+            <p className="modelo-glass-desc">
               Estaciones y zonas ilimitadas. Control por software cliente-servidor (Linux/Windows),
               trazabilidad avanzada con RFID e historial en SQL. Interfaz táctil con favoritos y RFID.
             </p>
-            <em className="modelo-meta">
-              Ideal para hospitales de alta complejidad y centros logísticos.  
+            <em className="modelo-glass-meta">
+              Ideal para hospitales de alta complejidad y centros logísticos.<br />
               Nivel de automatización: <strong>muy alto</strong>.
             </em>
           </article>
-
         </div>
-
       </div>
     </section>
   );
@@ -480,18 +452,6 @@ const App = () => {
 
             <HeroEquipos />
             <TabsEquipos />
-            <div className="scroll-wrapper scroll-sinen">
-              <EquipoSinen />
-            </div>
-
-            <div className="scroll-wrapper scroll-desliz">
-              <EquipoDesliz />
-            </div>
-
-            <div className="scroll-wrapper scroll-flap">
-              <EquipoFlap />
-            </div>
-
             <div className="scroll-wrapper scroll-sistemas">
               <SistemasEquipos />
             </div>
