@@ -238,10 +238,6 @@ export function TabsEquipos() {
 
     <div>
        <h2 className="titulo-sistemas">Tipos de Sistemas</h2>
-        <div className="equipos-tabs">
-          <span className="equipos-tab">Punto a punto</span>
-          <span className="equipos-tab">Multipunto</span>
-        </div>
     </div>
     
   );
@@ -252,14 +248,6 @@ export function SistemasEquipos() {
   return (
     <section className="equipos-sistemas">
       <div className="cards-container">
-        {/* Card 1 - Sistema Punto a Punto */}
-        <article className="sistema-card">
-          <h2>Sistema Punto a Punto</h2>
-          <p>
-            Un Sistema Neumático de Envíos Punto a Punto conecta exclusivamente dos estaciones o áreas mediante una red directa, permitiendo el envío de cápsulas en una sola ruta fija y sin desvíos intermedios.
-          </p>
-        </article>
-
         {/* Card 2 - Sistema Multipunto */}
         <article className="sistema-card">
           <h2>Sistema Multipunto</h2>
@@ -332,6 +320,114 @@ export function ModelosControl() {
   );
 }
 
+
+export function SistemasEquiposPAP() {
+  return (
+     <section className="equipos-sistemas">
+      <div className="cards-container">
+        {/* Card 1 - Sistema Punto a Punto */}
+        <article className="sistema-card">
+          <h2>Sistema Punto a Punto</h2>
+          <p>
+            Un Sistema Neumático de Envíos Punto a Punto conecta exclusivamente dos estaciones o áreas mediante una red directa, permitiendo el envío de cápsulas en una sola ruta fija y sin desvíos intermedios.
+          </p>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+
+
+export function ModelosAC() {
+  return (
+    <section className="modelos-ac">
+      <div className="container container--narrow">
+
+        <h2 className="modelos-ac__title_main">Modelos de Automatización</h2>
+
+        <div className="modelos-ac__grid">
+
+          {/* AC 1 */}
+          <article className="modelo-ac">
+            <h3 className="modelo-ac__title">AC 1</h3>
+            <ul className="modelo-ac__list">
+              <li>Transporte rápido y seguro (4–6 m/s) entre dos puntos.</li>
+              <li>Comunicación en un solo sentido.</li>
+              <li>Control autónomo por línea, con microprocesador que supervisa todo el sistema.</li>
+              <li>Bajo consumo eléctrico (2A en stand by) y turbina de activación automática para mayor vida útil.</li>
+              <li>
+                Recepción segura y práctica: estación deslizable para el envío y recepción masiva de cápsulas,
+                para el depósito en canastilla o caja fuerte, sin requerir personal fijo.
+              </li>
+              <li>Operación silenciosa, motor separado hasta 8 m y silenciador especializado.</li>
+              <li>Instalación flexible aérea o subterránea, con tubería de protección.</li>
+              <li>
+                Disponible en diámetros de 80 mm y 110 mm, ideal para entornos donde se requiere control estricto,
+                envío seguro y con alta frecuencia de envíos.
+              </li>
+              <li>
+                Activación y apagado automático de la turbina por su sistema de sensores,
+                incrementando el tiempo de vida útil de la misma.
+              </li>
+            </ul>
+          </article>
+
+          {/* AC GAS */}
+          <article className="modelo-ac">
+            <h3 className="modelo-ac__title">AC GAS</h3>
+            <ul className="modelo-ac__list">
+              <li>Es similar al AC 1 con un botón antiexplosivo.</li>
+              <li>Red eléctrica canalizada en conduit C-40 y condulets antiexplosivos.</li>
+              <li>
+                Instalamos de acuerdo con la NOM-005-ASEA-2016 de diseño, construcción,
+                operación y mantenimiento de estaciones de servicio.
+              </li>
+              <li>
+                Activación y apagado automático de la turbina por su sistema de sensores,
+                incrementando el tiempo de vida útil de la misma.
+              </li>
+            </ul>
+          </article>
+
+          {/* AC 2 */}
+          <article className="modelo-ac">
+            <h3 className="modelo-ac__title">AC 2</h3>
+            <ul className="modelo-ac__list">
+              <li>Transporte rápido y seguro de dinero y documentos, etc. (4–8 m/s) entre dos puntos.</li>
+              <li>
+                Intercomunicación de áreas de forma bidireccional mediante líneas independientes,
+                tantas como se requieran.
+              </li>
+              <li>Control autónomo por línea con microprocesador, sin dependencia entre líneas.</li>
+              <li>Bajo consumo eléctrico (2A en stand by) y turbina de activación automática para mayor vida útil.</li>
+              <li>Desaceleración neumática de cápsulas para un arribo seguro.</li>
+              <li>
+                Funcionamiento silencioso gracias a ubicación remota del motor
+                (hasta 8 metros) y silenciador especial.
+              </li>
+              <li>
+                Instalación flexible aérea y/o subterránea, esta última con tubería
+                de protección para mayor durabilidad.
+              </li>
+              <li>Turbina bifásica y trifásica de acuerdo con diseño.</li>
+              <li>
+                Control con base a microprocesador nacional o alemán
+                de acuerdo con aplicación y diseño.
+              </li>
+              <li>Señales visuales y/o audibles como equipo adicional opcional.</li>
+              <li>
+                Activación y apagado automático de la turbina por su sistema de sensores,
+                incrementando el tiempo de vida útil de la misma.
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  );
+}
 
 
 export function Footer() {
@@ -457,6 +553,14 @@ const App = () => {
 
             <div className="scroll-wrapper scroll-modelos">
               <ModelosControl />
+            </div>
+
+            <div className="scroll-wrapper scroll-sistemas-pap">
+              <SistemasEquiposPAP />
+            </div>
+
+            <div className="scroll-wrapper scroll-modelos-ac">
+              <ModelosAC />
             </div>
 
             <div className="scroll-wrapper-footer scroll-footer">
