@@ -629,6 +629,11 @@ p {
 
 /* Mobile chico (<= 480px) */
 @media (max-width: 480px) {
+
+  .hero-equipos {
+    min-height: 300px;
+  }
+  
   .equipos-section {
     padding: 40px 0 32px;
   }
@@ -749,19 +754,19 @@ p {
 @media (max-width: 480px) {
   
   .scroll-sistemas {
-    top: 90vh;
+    top: 55vh;
   }
 
   .scroll-modelos {
-    top: 150vh;
+    top: 120vh;
   }
 
   .scroll-sistemas-pap {
-  top: 420vh;
+  top: 380vh;
 }
 
 .scroll-modelos-ac {
-  top: 520vh;
+  top: 420vh;
 }
 
   .scroll-footer {
@@ -1354,6 +1359,7 @@ p {
 @media (max-width: 479px) {
    .modelos-main-title{
     font-size: 1.6rem;
+    margin-bottom:0;
   }
   
   .modelo-glass-title {
@@ -1372,6 +1378,7 @@ p {
 @media (max-width: 368px) {
   .modelos-main-title{
     font-size: 1.6rem;
+     margin-bottom:0;
   }
   
   .modelo-glass-title {
