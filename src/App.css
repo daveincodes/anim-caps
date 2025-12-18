@@ -1352,22 +1352,38 @@ p {
 }
 
 @media (max-width: 479px) {
-   .sistema-card p {
+   .modelos-main-title{
+    font-size: 1.6rem;
+  }
+  
+  .modelo-glass-title {
+    font-size: 20px;
+  }
+
+  .modelo-glass-desc {
     font-size: 12px;
   }
 
-  .sistema-card h2 {
-    font-size: 1.4rem;
+  .modelo-glass-meta {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 368px) {
-   .sistema-card p {
+  .modelos-main-title{
+    font-size: 1.6rem;
+  }
+  
+  .modelo-glass-title {
+    font-size: 20px;
+  }
+
+  .modelo-glass-desc {
     font-size: 12px;
   }
 
-  .sistema-card h2 {
-    font-size: 1.4rem;
+  .modelo-glass-meta {
+    font-size: 12px;
   }
 }
 
@@ -1449,4 +1465,44 @@ p {
     rgba(204, 0, 0, 0.42);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
     0 20px 45px rgba(0, 0, 0, .3);
+}
+
+
+@media (max-width: 768px) {
+  .modelos-ac__title_main{
+    font-size: 18px;
+  }
+  
+  .modelo-glass-title {
+    font-size: 20px;
+  }
+
+  .modelo-glass-desc {
+    font-size: 12px;
+  }
+
+  .modelo-glass-meta {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 479px) {
+  .modelos-ac__title_main{
+    font-size: 1.6rem;
+  }
+
+  .modelo-ac__list li {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 368px) {
+  .modelos-ac__title_main {
+    font-size: 1.6rem;
+  }
+  
+  .modelo-ac__list li {
+    font-size: 12px;
+  }
 }
