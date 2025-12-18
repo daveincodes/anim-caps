@@ -683,19 +683,19 @@ p {
 
 /* Posiciones base en desktop */
 .scroll-sistemas {
-  top: 120vh;
+  top: 100vh;
 }
 
 .scroll-modelos {
-  top: 180vh;
+  top: 160vh;
 }
 
 .scroll-sistemas-pap {
-  top: 320vh;
+  top: 260vh;
 }
 
 .scroll-modelos-ac {
-  top: 350vh;
+  top: 380vh;
 }
 
 .scroll-footer {
@@ -762,15 +762,15 @@ p {
   }
 
   .scroll-sistemas-pap {
-  top: 380vh;
+  top: 350vh;
 }
 
 .scroll-modelos-ac {
-  top: 420vh;
+  top: 390vh;
 }
 
   .scroll-footer {
-    top: 620vh;
+    top: 522vh;
   }
 }
 
