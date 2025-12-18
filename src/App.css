@@ -694,22 +694,11 @@ p {
 }
 
 .scroll-footer {
-  top: 562vh;
+  top: 565vh;
 }
 
 /* ===== Tablet ===== */
 @media (max-width: 1024px) {
-  .scroll-sinen {
-    top: 90vh;
-  }
-
-  .scroll-desliz {
-    top: 150vh;
-  }
-
-  .scroll-flap {
-    top: 210vh;
-  }
 
   .scroll-sistemas {
     top: 280vh;
@@ -734,23 +723,6 @@ p {
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .scroll-wrapper {
-    left: 4vw;
-    right: 4vw;
-    width: 92vw;
-  }
-
-  .scroll-sinen {
-    top: 110vh;
-  }
-
-  .scroll-desliz {
-    top: 180vh;
-  }
-
-  .scroll-flap {
-    top: 260vh;
-  }
 
   .scroll-sistemas {
     top: 350vh;
@@ -775,24 +747,13 @@ p {
 
 /* ===== Mobile pequeño ===== */
 @media (max-width: 480px) {
-  .scroll-sinen {
-    top: 120vh;
-  }
-
-  .scroll-desliz {
-    top: 150vh;
-  }
-
-  .scroll-flap {
-    top: 180vh;
-  }
-
+  
   .scroll-sistemas {
-    top: 230vh;
+    top: 90vh;
   }
 
   .scroll-modelos {
-    top: 300vh;
+    top: 150vh;
   }
 
   .scroll-sistemas-pap {
@@ -1265,6 +1226,38 @@ p {
     0 16px 40px rgba(0, 0, 0, .25);
 }
 
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .sistema-card p {
+    font-size: 12px;
+  }
+
+  .sistema-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 479px) {
+   .sistema-card p {
+    font-size: 12px;
+  }
+
+  .sistema-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 368px) {
+   .sistema-card p {
+    font-size: 12px;
+  }
+
+  .sistema-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
 
 .modelos-section {
   padding: 80px 20px;
@@ -1338,6 +1331,44 @@ p {
     rgba(204, 0, 0, 0.42);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
     0 20px 45px rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 768px) {
+  .modelos-main-title{
+    font-size: 1.6rem;
+  }
+  
+  .modelo-glass-title {
+    font-size: 20px;
+  }
+
+  .modelo-glass-desc {
+    font-size: 12px;
+  }
+
+  .modelo-glass-meta {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 479px) {
+   .sistema-card p {
+    font-size: 12px;
+  }
+
+  .sistema-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 368px) {
+   .sistema-card p {
+    font-size: 12px;
+  }
+
+  .sistema-card h2 {
+    font-size: 1.4rem;
+  }
 }
 
 
