@@ -264,6 +264,26 @@ export function SistemasEquipos() {
   );
 }
 
+function ModeloCard({ title, desc, meta }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <article className={`modelo-glass-card ${open ? "is-open" : ""}`}>
+      <h3 className="modelo-glass-title">{title}</h3>
+      <p className="modelo-glass-desc">{desc}</p>
+      <em className="modelo-glass-meta">
+        {meta}
+      </em>
+      <button
+        className="modelo-glass-toggle"
+        onClick={() => setOpen(!open)}
+        type="button"
+      >
+        {open ? "Ver menos" : "Ver más"}
+      </button>
+    </article>
+  );
+}
 
 export function ModelosControl() {
   return (
@@ -272,48 +292,35 @@ export function ModelosControl() {
         <h2 className="modelos-main-title">Modelos de Control</h2>
 
         <div className="modelos-cards-grid">
-          {/* Tarjeta AC 660 */}
-          <article className="modelo-glass-card">
-            <h3 className="modelo-glass-title">AC 660</h3>
-            <p className="modelo-glass-desc">
-              Diseñado para conectar hasta 99 estaciones a través de una red eficiente y controlada por microprocesador. Su operación es totalmente automática, sin necesidad de un PC dedicado, y permite el envío y recepción de cápsulas de forma bidireccional cuando se utilizan desviadores (diverters).
-            </p>
-            <em className="modelo-glass-meta">
-              Aplicaciones principales:
-              Por su tamaño compacto, fiabilidad y eficiencia, es ideal para aplicaciones que requieren agilidad y seguridad en espacios reducidos. Ideal para casetas de peaje, al permitir el traslado rápido y seguro de efectivo entre las cabinas y la oficina administrativa.
-            </em>
-          </article>
 
-          {/* Tarjeta AC 3000 */}
-          <article className="modelo-glass-card">
-            <h3 className="modelo-glass-title">AC 3000</h3>
-            <p className="modelo-glass-desc">
-              Diseñado para instalaciones con múltiples áreas que necesitan envíos frecuentes, rápidos y seguros entre estaciones, ideal para edificios grandes o múltiples áreas;  Soporta múltiples rutas, desvíos y cápsulas en tránsito.
-            </p>
-            <em className="modelo-glass-meta">
-              Hasta 500 estaciones conectadas en red,64 zonas independientes, control total mediante software Windows, Seguimiento con tecnología RFID y registro de auditoría
+          <ModeloCard
+            title="AC 660"
+            desc="Diseñado para conectar hasta 99 estaciones a través de una red eficiente y controlada por microprocesador. Su operación es totalmente automática, sin necesidad de un PC dedicado, y permite el envío y recepción de cápsulas de forma bidireccional cuando se utilizan desviadores (diverters)."
+            meta="Aplicaciones principales:
+              Por su tamaño compacto, fiabilidad y eficiencia, es ideal para aplicaciones que requieren agilidad y seguridad en espacios reducidos. Ideal para casetas de peaje, al permitir el traslado rápido y seguro de efectivo entre las cabinas y la oficina administrativa."
+          />
+
+          <ModeloCard
+            title="AC 3000"
+            desc="Diseñado para instalaciones con múltiples áreas que necesitan envíos frecuentes, rápidos y seguros entre estaciones, ideal para edificios grandes o múltiples áreas; Soporta múltiples rutas, desvíos y cápsulas en tránsito."
+            meta="Hasta 500 estaciones conectadas en red,64 zonas independientes, control total mediante software Windows, Seguimiento con tecnología RFID y registro de auditoría
 
               Aplicaciones principales:
-              Hospitales medianos o de alta especialidad, laboratorios centrales, industrias manufactureras, centros logísticos y corporativos con alto volumen de operaciones internas.
-            </em>
-          </article>
+              Hospitales medianos o de alta especialidad, laboratorios centrales, industrias manufactureras, centros logísticos y corporativos con alto volumen de operaciones internas."
+          />
 
-          {/* Tarjeta AC 4000 */}
-          <article className="modelo-glass-card">
-            <h3 className="modelo-glass-title">AC 4000</h3>
-            <p className="modelo-glass-desc">
-              Es la solución más avanzada de Aerocom, diseñada para adaptarse a cualquier tamaño sin límite de estaciones o zonas. Se caracteriza por su alto nivel de automatización, seguridad y trazabilidad.
-            </p>
-            <em className="modelo-glass-meta">
-              •Escalabilidad ilimitada: soporta cualquier número de estaciones, líneas y zonas.
+          <ModeloCard
+            title="AC 4000"
+            desc=" Es la solución más avanzada de Aerocom, diseñada para adaptarse a cualquier tamaño sin límite de estaciones o zonas. Se caracteriza por su alto nivel de automatización, seguridad y trazabilidad."
+            meta="•Escalabilidad ilimitada: soporta cualquier número de estaciones, líneas y zonas.
               •Interfaz moderna: pantalla táctil intuitiva con funciones de favoritos, directorio, prioridades y envío seguro.
-              •Software cliente‑servidor, compatible con Linux o Windows, base de datos SQL para registros, auditoría y respaldo. 
-              •Funcionalidad avanzada de seguridad: incluye opciones RFID para asegurar el envío de cápsulas y seguimiento. 
+              •Software cliente‑servidor, compatible con Linux o Windows, base de datos SQL para registros, auditoría y respaldo.
+              •Funcionalidad avanzada de seguridad: incluye opciones RFID para asegurar el envío de cápsulas y seguimiento.
 
               Aplicaciones ideales:
-              Hospitales grandes, laboratorios centrales, industrias complejas, centros logísticos y corporativos con muchas estaciones, donde se requiere máximo control, seguridad operativa y trazabilidad.
-            </em>
-          </article>
+              Hospitales grandes, laboratorios centrales, industrias complejas, centros logísticos y corporativos con muchas estaciones, donde se requiere máximo control, seguridad operativa y trazabilidad"
+          />
+
         </div>
       </div>
     </section>
@@ -321,11 +328,11 @@ export function ModelosControl() {
 }
 
 
+
 export function SistemasEquiposPAP() {
   return (
      <section className="equipos-sistemas">
       <div className="cards-container">
-        {/* Card 1 - Sistema Punto a Punto */}
         <article className="sistema-card">
           <h2>Sistema Punto a Punto</h2>
           <p>
@@ -338,90 +345,68 @@ export function SistemasEquiposPAP() {
 }
 
 
+function ModeloACCard({ title, children }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <article className={`modelo-ac ${open ? "is-open" : ""}`}>
+      <h3 className="modelo-ac__title">{title}</h3>
+
+      <ul className="modelo-ac__list">
+        {children}
+      </ul>
+
+      <button
+        className="modelo-ac__toggle"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {open ? "Ver menos" : "Ver más"}
+      </button>
+    </article>
+  );
+}
 
 export function ModelosAC() {
   return (
     <section className="modelos-ac">
       <div className="container container--narrow">
-
         <h2 className="modelos-ac__title_main">Modelos de Automatización</h2>
 
         <div className="modelos-ac__grid">
 
-          {/* AC 1 */}
-          <article className="modelo-ac">
-            <h3 className="modelo-ac__title">AC 1</h3>
-            <ul className="modelo-ac__list">
-              <li>Transporte rápido y seguro (4–6 m/s) entre dos puntos.</li>
-              <li>Comunicación en un solo sentido.</li>
-              <li>Control autónomo por línea, con microprocesador que supervisa todo el sistema.</li>
-              <li>Bajo consumo eléctrico (2A en stand by) y turbina de activación automática para mayor vida útil.</li>
-              <li>
-                Recepción segura y práctica: estación deslizable para el envío y recepción masiva de cápsulas,
-                para el depósito en canastilla o caja fuerte, sin requerir personal fijo.
-              </li>
-              <li>Operación silenciosa, motor separado hasta 8 m y silenciador especializado.</li>
-              <li>Instalación flexible aérea o subterránea, con tubería de protección.</li>
-              <li>
-                Disponible en diámetros de 80 mm y 110 mm, ideal para entornos donde se requiere control estricto,
-                envío seguro y con alta frecuencia de envíos.
-              </li>
-              <li>
-                Activación y apagado automático de la turbina por su sistema de sensores,
-                incrementando el tiempo de vida útil de la misma.
-              </li>
-            </ul>
-          </article>
+          <ModeloACCard title="AC 1">
+            <li>Transporte rápido y seguro (4–6 m/s) entre dos puntos.</li>
+            <li>Comunicación en un solo sentido.</li>
+            <li>Control autónomo por línea con microprocesador.</li>
+            <li>Bajo consumo eléctrico (2A en stand by).</li>
+            <li>Recepción segura sin personal fijo.</li>
+            <li>Operación silenciosa con motor remoto.</li>
+            <li>Instalación aérea o subterránea.</li>
+            <li>Diámetros de 80 mm y 110 mm.</li>
+            <li>Activación automática de turbina.</li>
+          </ModeloACCard>
 
-          {/* AC GAS */}
-          <article className="modelo-ac">
-            <h3 className="modelo-ac__title">AC GAS</h3>
-            <ul className="modelo-ac__list">
-              <li>Es similar al AC 1 con un botón antiexplosivo.</li>
-              <li>Red eléctrica canalizada en conduit C-40 y condulets antiexplosivos.</li>
-              <li>
-                Instalamos de acuerdo con la NOM-005-ASEA-2016 de diseño, construcción,
-                operación y mantenimiento de estaciones de servicio.
-              </li>
-              <li>
-                Activación y apagado automático de la turbina por su sistema de sensores,
-                incrementando el tiempo de vida útil de la misma.
-              </li>
-            </ul>
-          </article>
+          <ModeloACCard title="AC GAS">
+            <li>Similar al AC 1 con botón antiexplosivo.</li>
+            <li>Red eléctrica con conduit C-40.</li>
+            <li>Cumple NOM-005-ASEA-2016.</li>
+            <li>Activación automática de turbina.</li>
+          </ModeloACCard>
 
-          {/* AC 2 */}
-          <article className="modelo-ac">
-            <h3 className="modelo-ac__title">AC 2</h3>
-            <ul className="modelo-ac__list">
-              <li>Transporte rápido y seguro de dinero y documentos, etc. (4–8 m/s) entre dos puntos.</li>
-              <li>
-                Intercomunicación de áreas de forma bidireccional mediante líneas independientes,
-                tantas como se requieran.
-              </li>
-              <li>Control autónomo por línea con microprocesador, sin dependencia entre líneas.</li>
-              <li>Bajo consumo eléctrico (2A en stand by) y turbina de activación automática para mayor vida útil.</li>
-              <li>Desaceleración neumática de cápsulas para un arribo seguro.</li>
-              <li>
-                Funcionamiento silencioso gracias a ubicación remota del motor
-                (hasta 8 metros) y silenciador especial.
-              </li>
-              <li>
-                Instalación flexible aérea y/o subterránea, esta última con tubería
-                de protección para mayor durabilidad.
-              </li>
-              <li>Turbina bifásica y trifásica de acuerdo con diseño.</li>
-              <li>
-                Control con base a microprocesador nacional o alemán
-                de acuerdo con aplicación y diseño.
-              </li>
-              <li>Señales visuales y/o audibles como equipo adicional opcional.</li>
-              <li>
-                Activación y apagado automático de la turbina por su sistema de sensores,
-                incrementando el tiempo de vida útil de la misma.
-              </li>
-            </ul>
-          </article>
+          <ModeloACCard title="AC 2">
+            <li>Transporte bidireccional (4–8 m/s).</li>
+            <li>Líneas independientes por área.</li>
+            <li>Control autónomo por línea.</li>
+            <li>Bajo consumo eléctrico.</li>
+            <li>Desaceleración neumática.</li>
+            <li>Motor remoto silencioso.</li>
+            <li>Instalación aérea o subterránea.</li>
+            <li>Turbina bifásica o trifásica.</li>
+            <li>Control microprocesado nacional o alemán.</li>
+            <li>Señales visuales y audibles opcionales.</li>
+            <li>Activación automática de turbina.</li>
+          </ModeloACCard>
 
         </div>
       </div>

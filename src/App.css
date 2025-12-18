@@ -1263,7 +1263,6 @@ p {
   }
 }
 
-
 .modelos-section {
   padding: 80px 20px;
 }
@@ -1291,15 +1290,14 @@ p {
 
   /* Mismo glass rojo del header */
   background: radial-gradient(180% 120% at 0% 0%, rgba(204, 0, 0, .15) 0%, transparent 35%),
-    rgba(204, 0, 0, 0.280);
+    rgba(204, 0, 0, 0.5);
   border: 1px solid var(--glass-bd-2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
     0 10px 30px rgba(0, 0, 0, .18);
   backdrop-filter: blur(12px) saturate(1.15);
   -webkit-backdrop-filter: blur(12px) saturate(1.15);
-
   transition: all .35s ease;
-  color: #333;
+  color: #fff;
 }
 
 .modelo-glass-title {
@@ -1336,6 +1334,43 @@ p {
     rgba(204, 0, 0, 0.42);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
     0 20px 45px rgba(0, 0, 0, .3);
+}
+
+
+/* ========== test========== */
+
+.modelo-glass-meta {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  opacity: 0.9;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Estado abierto */
+.modelo-glass-card.is-open .modelo-glass-meta {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* Botón */
+.modelo-glass-toggle {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.modelo-glass-toggle:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -1416,23 +1451,6 @@ p {
   margin: 0 auto;
 }
 
-.modelo-ac__list {
-  pointer-events: auto;
-  padding: 36px 32px;
-  border-radius: var(--chip-radius);
-
-  /* Mismo glass rojo del header */
-  background: radial-gradient(180% 120% at 0% 0%, rgba(204, 0, 0, .15) 0%, transparent 35%),
-    rgba(204, 0, 0, 0.280);
-  border: 1px solid var(--glass-bd-2);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
-    0 10px 30px rgba(0, 0, 0, .18);
-  backdrop-filter: blur(12px) saturate(1.15);
-  -webkit-backdrop-filter: blur(12px) saturate(1.15);
-
-  transition: all .35s ease;
-  color: #333;
-}
 
 .modelos-ac__title {
   margin: 0 0 20px 0;
@@ -1462,7 +1480,7 @@ p {
 }
 
 .modelo-ac__list li {
-  color: #000;
+  color: #fff;
 }
 
 /* Hover bonito */
@@ -1473,6 +1491,53 @@ p {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35),
     0 20px 45px rgba(0, 0, 0, .3);
 }
+
+
+/* ===== Modelo AC – colapsable ===== */
+
+.modelo-ac {
+  pointer-events: auto;
+  padding: 32px 28px;
+  border-radius: var(--chip-radius);
+  background: radial-gradient(
+      180% 120% at 0% 0%,
+      rgba(204, 0, 0, 0.2) 0%,
+      transparent 35%
+    ),
+    rgba(204, 0, 0, 0.48);
+  border: 1px solid var(--glass-bd-2);
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  color: #fff;
+  transition: all 0.35s ease;
+}
+
+.modelo-ac__list {
+  max-height: 160px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 16px;
+  padding-left: 18px;
+}
+
+.modelo-ac.is-open .modelo-ac__list {
+  max-height: 1200px;
+}
+
+.modelo-ac__toggle {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.modelo-ac__toggle:hover {
+  text-decoration: underline;
+}
+
 
 
 @media (max-width: 768px) {
@@ -1513,3 +1578,8 @@ p {
     font-size: 12px;
   }
 }
+
+
+
+
+
