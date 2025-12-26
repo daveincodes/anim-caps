@@ -5,6 +5,15 @@ import * as THREE from 'three';
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/DIEGO CAPSULA-transformed.glb');
+  useEffect(() => {
+  console.group('GLB DEBUG');
+
+  console.log('NODES:', Object.keys(nodes));
+  console.log('MATERIALS:', Object.keys(materials));
+  console.log('ANIMATIONS:', animations.map(a => a.name));
+
+  console.groupEnd();
+}, [nodes, materials, animations]);
   const { actions, mixer } = useAnimations(animations, group);
   const scroll = useScroll();
 
@@ -45,7 +54,7 @@ export default function Model(props) {
         <mesh name="Blue_Tube" geometry={nodes.Blue_Tube.geometry} material={materials.PaletteMaterial002} position={[-185.952, -102.612, -6.937]} rotation={[-3.066, -0.035, -3.029]} scale={0.292} />
         <mesh name="Red_Tube" geometry={nodes.Red_Tube.geometry} material={materials.PaletteMaterial002} position={[-185.451, -102.886, -7.969]} rotation={[2.977, 0.429, -3.121]} scale={0.292} />
         <mesh name="Red_Top" geometry={nodes.Red_Top.geometry} material={materials.PaletteMaterial002} position={[-185.441, -102.38, -8.05]} rotation={[-0.161, -0.242, -0.019]} scale={0.331} />
-        <mesh name="Cylinder023" geometry={nodes.Cylinder023.geometry} material={nodes.Cylinder023.material} position={[-208.256, 135.259, 32.641]} rotation={[Math.PI / 2, 0, 0]} scale={[1.144, 1.319, 2.21]} />
+        {/* <mesh name="Cylinder023" geometry={nodes.Cylinder023.geometry} material={nodes.Cylinder023.material} position={[-208.256, 135.259, 32.641]} rotation={[Math.PI / 2, 0, 0]} scale={[1.144, 1.319, 2.21]} /> */}
         <mesh name="CARTA_BUENA" geometry={nodes.CARTA_BUENA.geometry} material={materials.PaletteMaterial002} position={[85.474, 198.623, -12.859]} rotation={[-Math.PI / 2, 1.571, 0]} scale={-6.234} />
         <group name="Cylinder033" position={[91.634, 192.5, -13.091]} scale={[2.826, 0.806, 2.826]}>
           <mesh name="Cylinder030" geometry={nodes.Cylinder030.geometry} material={materials.PaletteMaterial002} />

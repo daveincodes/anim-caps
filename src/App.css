@@ -609,7 +609,7 @@ p {
   }
 
   .equipos-sistemas {
-    padding-top: 28px;
+    padding-top: 0px;
     margin: 0 16px;
   }
 
@@ -667,6 +667,8 @@ p {
 }
 
 
+
+
 /* ===== Scroll HTML responsive layout ===== */
 
 .scroll-wrapper {
@@ -706,19 +708,19 @@ p {
 @media (max-width: 1024px) {
 
   .scroll-sistemas {
-    top: 280vh;
+    top: 90vh;
   }
 
   .scroll-modelos {
-    top: 380vh;
+    top: 180vh;
   }
 
   .scroll-sistemas-pap {
-  top: 450vh;
+  top: 400vh;
 }
 
 .scroll-modelos-ac {
-  top: 520vh;
+  top: 420vh;
 }
 
   .scroll-footer {
@@ -1233,6 +1235,12 @@ p {
 
 /* ===== RESPONSIVE ===== */
 
+@media (max-width: 1024px) {
+  .sistema-card p {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .sistema-card p {
     font-size: 12px;
@@ -1428,7 +1436,6 @@ p {
     font-size: 12px;
   }
 }
-
 
 
 .modelos-ac {
