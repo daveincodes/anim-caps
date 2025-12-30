@@ -708,7 +708,7 @@ p {
 @media (max-width: 1024px) {
 
   .scroll-sistemas {
-    top: 90vh;
+    top: 110vh;
   }
 
   .scroll-modelos {
@@ -716,15 +716,15 @@ p {
   }
 
   .scroll-sistemas-pap {
-  top: 400vh;
+  top: 350vh;
 }
 
 .scroll-modelos-ac {
-  top: 420vh;
+  top: 380vh;
 }
 
   .scroll-footer {
-    top: 580vh;
+    top: 550vh;
   }
 }
 
@@ -1061,6 +1061,54 @@ p {
     padding: 16px 14px;
   }
 }
+
+
+/* ===== FIX GLOBAL REACT SCROLL ===== */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Evita problemas de 100vh en mobile */
+.landing-section,
+.hero-equipos {
+  min-height: 100svh;
+}
+
+
+/* ===============================
+   BREAKPOINT ESTÁNDAR 1060px
+   =============================== */
+
+@media (max-width: 1060px) {
+
+  /* Congela layout desktop */
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Evita colapsos por ancho fijo */
+  .nav-chip {
+    width: calc(100vw - 32px);
+  }
+
+  /* Evita saltos raros de cards */
+  .cards-container,
+  .modelos-cards-grid,
+  .modelos-ac__grid {
+    max-width: 100%;
+    padding-inline: 20px;
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   * {
