@@ -443,13 +443,13 @@ export function Footer() {
               target="_blank"
             >Trabaja con nosotros</a
             >
-            <a href="/contacto">Contacto</a>
+            <a href="https://sitio-sne-code.webflow.io/contacto">Contacto</a>
           </div>
         </div>
         <div>
           <strong>Ayuda</strong>
           <div className="flist">
-            <a href="#privacidad">Política de privacidad</a>
+            <a href="https://sitio-sne-code.webflow.io/privacidad">Política de privacidad</a>
           </div>
         </div>
         <div>
