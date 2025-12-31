@@ -1279,6 +1279,12 @@ html, body {
 
 /* ===== RESPONSIVE ===== */
 
+@media (max-width: 1280px) {
+  .modelo-glass-desc{
+    font-size: 12px!important;
+  }
+}
+
 @media (max-width: 1024px) {
   .sistema-card p {
     font-size: 12px;
