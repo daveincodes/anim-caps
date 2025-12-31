@@ -625,47 +625,6 @@ p {
   }
 }
 
-/* Mobile chico (<= 480px) */
-@media (max-width: 480px) {
-
-  .hero-equipos {
-    min-height: 300px;
-  }
-  
-  .equipos-section {
-    padding: 40px 0 32px;
-  }
-
-  .equipos-tabs {
-    margin: 20px 12px;
-    gap: 10px;
-  }
-
-  .equipos-tab {
-    max-width: 100%;
-    font-size: 0.95rem;
-    padding: 8px 14px;
-  }
-
-  .equipos-tipos {
-    margin: 0 12px 32px;
-  }
-
-  .sistema-block h2 {
-    font-size: 1.15rem;
-  }
-
-  .sistema-block p {
-    font-size: 0.9rem;
-  }
-
-  .sistema-block em {
-    font-size: 0.8rem;
-  }
-}
-
-
-
 
 /* ===== Scroll HTML responsive layout ===== */
 
@@ -752,17 +711,52 @@ p {
 
 /* ===== Mobile pequeño ===== */
 @media (max-width: 480px) {
+
+  .hero-equipos {
+    min-height: 300px;
+  }
+  
+  .equipos-section {
+    padding: 40px 0 32px;
+  }
+
+  .equipos-tabs {
+    margin: 20px 12px;
+    gap: 10px;
+  }
+
+  .equipos-tab {
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+
+  .equipos-tipos {
+    margin: 0 12px 32px;
+  }
+
+  .sistema-block h2 {
+    font-size: 1.15rem;
+  }
+
+  .sistema-block p {
+    font-size: 0.9rem;
+  }
+
+  .sistema-block em {
+    font-size: 0.8rem;
+  }
   
   .scroll-sistemas {
-    top: 55vh;
+    top: 66vh;
   }
 
   .scroll-modelos {
-    top: 120vh;
+    top: 116vh;
   }
 
   .scroll-sistemas-pap {
-  top: 280vh;
+  top: 330vh;
 }
 
 .scroll-modelos-ac {
@@ -1050,11 +1044,6 @@ p {
     font-size: 1.3rem;
   }
 
-  .fbrand img {
-    width: 35px;
-    height: 35px;
-  }
-
   .site-footer .container {
     padding: 16px 14px;
   }
@@ -1080,32 +1069,6 @@ html, body {
   min-height: 100svh;
 }
 
-
-/* ===============================
-   BREAKPOINT ESTÁNDAR 1060px
-   =============================== */
-
-@media (max-width: 1060px) {
-
-  /* Congela layout desktop */
-  .container {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-
-  /* Evita colapsos por ancho fijo */
-  .nav-chip {
-    width: calc(100vw - 32px);
-  }
-
-  /* Evita saltos raros de cards */
-  .cards-container,
-  .modelos-cards-grid,
-  .modelos-ac__grid {
-    max-width: 100%;
-    padding-inline: 20px;
-  }
-}
 
 
 @media (prefers-reduced-motion: reduce) {
@@ -1178,6 +1141,12 @@ html, body {
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
+  .landing-section,
+.hero-equipos {
+  min-height: 60svh;
+}
+  
+  
   .modelos-section {
     padding: 50px 0;
   }
@@ -1629,7 +1598,7 @@ html, body {
 
 @media (max-width: 479px) {
   .modelos-ac__title_main{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .modelo-ac__list li {
